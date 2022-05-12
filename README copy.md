@@ -76,7 +76,7 @@ Use the following guidelines to set up your models and API routes:
   <!-- * String
   * Required
   * Unique -->
-  * Must match a valid email address (look into Mongoose's matching validation)
+  * Must match a valid email address (look into Mongoose's matching validation) **do I need t orun validators????
 
 <!-- * `thoughts`
   * Array of `_id` values referencing the `Thought` model -->
@@ -143,11 +143,11 @@ Create a virtual called `friendCount` that retrieves the length of the user's `f
 
 <!-- **`/api/users`**
 
-* `GET` all users
+DONE---- `GET` all users
 
-* `GET` a single user by its `_id` and populated thought and friend data
+`GET` a single user by its `_id` and populated thought and friend data
 
-* `POST` a new user: -->
+DONE---- `POST` a new user: -->
 
 ```json
 // example data
