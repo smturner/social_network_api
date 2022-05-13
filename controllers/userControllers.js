@@ -53,8 +53,8 @@ module.exports = {
         });
     },
 
-    addFriend(req, res) {
-        User.
-    }
-    removeFriend,
+    // addFriend(req, res) {
+    //     User.
+    // }
+    // removeFriend,
 }
