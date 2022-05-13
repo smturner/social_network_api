@@ -2,30 +2,28 @@ const {Schema, model} = require ('mongoose');
 
 const userSchema = new Schema(
     {
-        username: { type:String, 
-        unique: true,
-        required: true,
+        username: { 
+            type:String, 
+            unique: true,
+            required: true,
          },
         email: { 
-        type:String, required: true,
-        unique: true },
-        // friends: [this],
+            type:String, 
+            required: true,
+            unique: true 
+        },
 
     thoughts: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'thought'
+            ref: 'thought',
         }
     ],
     friends: [
         {
             type:Schema.Types.ObjectId,
-            ref: 'user'
-
+            ref: 'user',
     }]
-    
-  
-
 },
 {
     toJSON: {

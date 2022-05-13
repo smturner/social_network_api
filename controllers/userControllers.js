@@ -1,11 +1,14 @@
-const User = require('../models/User');
+const { User } = require('../models/');
 
 module.exports = {
     getUsers(req, res) {
         User.find()
-            .then((user) => res.json(user))
-            .catch((err) => res.status(500)
-                .json(err));
+        .populate('thoughts')
+        .then((user) => res.json(user))
+            .catch((err) => {
+                console.error({ message: err });
+            res.status(500)
+                .json(err)});
     },
 
     createUser(req, res) {
@@ -17,6 +20,7 @@ module.exports = {
 
     getSingleUser(req, res) {
         User.findOne({ _id: req.params.userId })
+        .populate('thoughts')
             .then((user) => !user
                 ? res.status(404).json({ message: 'No user with that ID exists' })
                 : res.json(user)
@@ -53,8 +57,11 @@ module.exports = {
         });
     },
 
-    // addFriend(req, res) {
-    //     User.
-    // }
+    addFriend(req, res) {
+        User.create(req.body)
+        .then((user) => res.json(user))
+        .catch((err) => res.status(500).json(err));
+
+    },
     // removeFriend,
 }

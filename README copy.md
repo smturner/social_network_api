@@ -68,21 +68,21 @@ Use the following guidelines to set up your models and API routes:
 
 * `username`
   <!-- * String
-  * Unique -->
-  <!-- * Required -->
+  * Unique
+  * Required -->
   * Trimmed
 
 * `email`
   <!-- * String
   * Required
   * Unique -->
-  * Must match a valid email address (look into Mongoose's matching validation) **do I need t orun validators????
+  * Must match a valid email address (look into Mongoose's matching validation)
 
 <!-- * `thoughts`
   * Array of `_id` values referencing the `Thought` model -->
 
-<!-- * `friends`
-  * Array of `_id` values referencing the `User` model (self-reference) -->
+* `friends`
+  * Array of `_id` values referencing the `User` model (self-reference)
 
 <!-- **Schema Settings**:
 
@@ -91,42 +91,42 @@ Create a virtual called `friendCount` that retrieves the length of the user's `f
 ---
 
 **Thought**:
-
-<!-- * `thoughtText`
+<!-- 
+* `thoughtText`
   * String
   * Required
   * Must be between 1 and 280 characters -->
 
-* `createdAt`
-  <!-- * Date
-  * Set default value to the current timestamp -->
-  * Use a getter method to format the timestamp on query
+<!-- * `createdAt`
+  * Date
+  * Set default value to the current timestamp
+  * Use a getter method to format the timestamp on query -->
 
 * `username` (The user that created this thought)
-  * String
-  * Required
+  <!-- * String
+  * Required -->
 
 <!-- * `reactions` (These are like replies)
   * Array of nested documents created with the `reactionSchema` -->
 
-**Schema Settings**:
+<!-- **Schema Settings**:
 
-<!-- Create a virtual called `reactionCount` that retrieves the length of the thought's `reactions` array field on query. -->
+Create a virtual called `reactionCount` that retrieves the length of the thought's `reactions` array field on query. -->
 
 ---
 
-<!-- **Reaction** (SCHEMA ONLY) -->
+**Reaction** (SCHEMA ONLY)
 
 <!-- * `reactionId`
   * Use Mongoose's ObjectId data type
   * Default value is set to a new ObjectId -->
-<!-- 
-* `reactionBody`
+
+<!-- * `reactionBody`
   * String
   * Required
-  * 280 character maximum -->
+  * 280 character maximum
 
-<!-- * `username`
+* `username`
   * String
   * Required -->
 
@@ -135,31 +135,31 @@ Create a virtual called `friendCount` that retrieves the length of the user's `f
   * Set default value to the current timestamp -->
   * Use a getter method to format the timestamp on query
 
-**Schema Settings**:
+<!-- **Schema Settings**:
 
-<!-- This will not be a model, but rather will be used as the `reaction` field's subdocument schema in the `Thought` model. -->
+This will not be a model, but rather will be used as the `reaction` field's subdocument schema in the `Thought` model. -->
 
 ### API Routes
 
-<!-- **`/api/users`**
+**`/api/users`**
 
-DONE---- `GET` all users
+<!-- * `GET` all users -->
 
-`GET` a single user by its `_id` and populated thought and friend data
+* `GET` a single user by its `_id` and populated thought and friend data
 
-DONE---- `POST` a new user: -->
+<!-- * `POST` a new user: -->
 
-```json
+<!-- ```json
 // example data
 {
   "username": "lernantino",
   "email": "lernantino@gmail.com"
 }
-```
+``` -->
 
-<!-- * `PUT` to update a user by its `_id`
+<!-- * `PUT` to update a user by its `_id` -->
 
-* `DELETE` to remove user by its `_id` -->
+<!-- * `DELETE` to remove user by its `_id` -->
 
 **BONUS**: Remove a user's associated thoughts when deleted.
 
@@ -175,11 +175,11 @@ DONE---- `POST` a new user: -->
 
 **`/api/thoughts`**
 
-<!-- * `GET` to get all thoughts
+<!-- * `GET` to get all thoughts -->
 
-* `GET` to get a single thought by its `_id` -->
+* `GET` to get a single thought by its `_id`
 
-<!-- * `POST` to create a new thought (don't forget to push the created thought's `_id` to the associated user's `thoughts` array field) -->
+* `POST` to create a new thought (don't forget to push the created thought's `_id` to the associated user's `thoughts` array field)
 
 ```json
 // example data
@@ -190,17 +190,17 @@ DONE---- `POST` a new user: -->
 }
 ```
 
-<!-- * `PUT` to update a thought by its `_id`
+* `PUT` to update a thought by its `_id`
 
-* `DELETE` to remove a thought by its `_id` -->
+* `DELETE` to remove a thought by its `_id`
 
 ---
 
 **`/api/thoughts/:thoughtId/reactions`**
 
-<!-- * `POST` to create a reaction stored in a single thought's `reactions` array field
+* `POST` to create a reaction stored in a single thought's `reactions` array field
 
-* `DELETE` to pull and remove a reaction by the reaction's `reactionId` value -->
+* `DELETE` to pull and remove a reaction by the reaction's `reactionId` value
 
 ## Grading Requirements
 
