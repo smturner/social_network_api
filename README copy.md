@@ -66,23 +66,23 @@ Use the following guidelines to set up your models and API routes:
 
 **User**:
 
-* `username`
+<!-- * `username` -->
   <!-- * String
   * Unique
   * Required -->
-  * Trimmed
+  <!-- * Trimmed -->
 
-* `email`
+<!-- * `email` -->
   <!-- * String
   * Required
   * Unique -->
-  * Must match a valid email address (look into Mongoose's matching validation)
+  <!-- * Must match a valid email address (look into Mongoose's matching validation) -->
 
 <!-- * `thoughts`
   * Array of `_id` values referencing the `Thought` model -->
-
+<!-- 
 * `friends`
-  * Array of `_id` values referencing the `User` model (self-reference)
+  * Array of `_id` values referencing the `User` model (self-reference) -->
 
 <!-- **Schema Settings**:
 
@@ -90,7 +90,7 @@ Create a virtual called `friendCount` that retrieves the length of the user's `f
 
 ---
 
-**Thought**:
+<!-- **Thought**: -->
 <!-- 
 * `thoughtText`
   * String
@@ -145,7 +145,7 @@ This will not be a model, but rather will be used as the `reaction` field's subd
 
 <!-- * `GET` all users -->
 
-* `GET` a single user by its `_id` and populated thought and friend data
+<!-- * `GET` a single user by its `_id` and populated thought and friend data -->
 
 <!-- * `POST` a new user: -->
 
@@ -167,7 +167,7 @@ This will not be a model, but rather will be used as the `reaction` field's subd
 
 **`/api/users/:userId/friends/:friendId`**
 
-* `POST` to add a new friend to a user's friend list
+<!-- * `POST` to add a new friend to a user's friend list -->
 
 * `DELETE` to remove a friend from a user's friend list
 
@@ -192,13 +192,13 @@ This will not be a model, but rather will be used as the `reaction` field's subd
 
 <!-- * `PUT` to update a thought by its `_id` -->
 
-* `DELETE` to remove a thought by its `_id`
+<!-- * `DELETE` to remove a thought by its `_id` -->
 
 ---
 
 **`/api/thoughts/:thoughtId/reactions`**
 
-* `POST` to create a reaction stored in a single thought's `reactions` array field
+<!-- * `POST` to create a reaction stored in a single thought's `reactions` array field -->
 
 * `DELETE` to pull and remove a reaction by the reaction's `reactionId` value
 
