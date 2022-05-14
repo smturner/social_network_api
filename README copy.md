@@ -102,7 +102,7 @@ Create a virtual called `friendCount` that retrieves the length of the user's `f
   * Set default value to the current timestamp
   * Use a getter method to format the timestamp on query -->
 
-* `username` (The user that created this thought)
+<!-- * `username` (The user that created this thought) -->
   <!-- * String
   * Required -->
 
@@ -177,20 +177,20 @@ This will not be a model, but rather will be used as the `reaction` field's subd
 
 <!-- * `GET` to get all thoughts -->
 
-* `GET` to get a single thought by its `_id`
+<!-- * `GET` to get a single thought by its `_id` -->
+<!-- 
+* `POST` to create a new thought (don't forget to push the created thought's `_id` to the associated user's `thoughts` array field) -->
 
-* `POST` to create a new thought (don't forget to push the created thought's `_id` to the associated user's `thoughts` array field)
-
-```json
+<!-- ```json
 // example data
 {
   "thoughtText": "Here's a cool thought...",
   "username": "lernantino",
   "userId": "5edff358a0fcb779aa7b118b"
 }
-```
+``` -->
 
-* `PUT` to update a thought by its `_id`
+<!-- * `PUT` to update a thought by its `_id` -->
 
 * `DELETE` to remove a thought by its `_id`
 

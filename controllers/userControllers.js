@@ -27,6 +27,7 @@ module.exports = {
             )
             .catch((err) => res.status(500).json(err));
     },
+
     updateUser(req, res) {
         User.findOneAndUpdate({ _id: req.params.userId },
             { $set: req.body },
@@ -58,8 +59,11 @@ module.exports = {
     },
 
     addFriend(req, res) {
-        User.create(req.body)
-        .then((user) => res.json(user))
+        User.findOneAndUpdate({_id: req.params.userId},
+        {$set: {friends: req.params.friendId}},
+        {new: true}
+        )
+        .then(() => res.json("Updated friend"))
         .catch((err) => res.status(500).json(err));
 
     },
