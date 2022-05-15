@@ -21,3 +21,16 @@ router.route('/:userId/friends/:friendId').post(addFriend)
 
 module.exports = router;
 
+
+
+// User.findOneAndUpdate({
+//     _id: req.params.userId
+// },
+// {$pull: { friends: {userId: req.params.friendsId}}},
+// { runValidators: true, new: true})
+// .then((user) =>
+// !user
+// ? res.status(404).json({message: 'No user with that id!'})
+// : res.json(thought))
+// .catch((err) => res.status(500).json(err))
+// })

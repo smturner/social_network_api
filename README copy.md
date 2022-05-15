@@ -99,8 +99,8 @@ Create a virtual called `friendCount` that retrieves the length of the user's `f
 
 <!-- * `createdAt`
   * Date
-  * Set default value to the current timestamp
-  * Use a getter method to format the timestamp on query -->
+  * Set default value to the current timestamp -->
+  * Use a getter method to format the timestamp on query
 
 <!-- * `username` (The user that created this thought) -->
   <!-- * String
@@ -115,7 +115,7 @@ Create a virtual called `reactionCount` that retrieves the length of the thought
 
 ---
 
-**Reaction** (SCHEMA ONLY)
+<!-- **Reaction** (SCHEMA ONLY) -->
 
 <!-- * `reactionId`
   * Use Mongoose's ObjectId data type
@@ -138,10 +138,10 @@ Create a virtual called `reactionCount` that retrieves the length of the thought
 <!-- **Schema Settings**:
 
 This will not be a model, but rather will be used as the `reaction` field's subdocument schema in the `Thought` model. -->
-
+<!-- 
 ### API Routes
 
-**`/api/users`**
+**`/api/users`** -->
 
 <!-- * `GET` all users -->
 
@@ -200,7 +200,7 @@ This will not be a model, but rather will be used as the `reaction` field's subd
 
 <!-- * `POST` to create a reaction stored in a single thought's `reactions` array field -->
 
-* `DELETE` to pull and remove a reaction by the reaction's `reactionId` value
+<!-- * `DELETE` to pull and remove a reaction by the reaction's `reactionId` value -->
 
 ## Grading Requirements
 

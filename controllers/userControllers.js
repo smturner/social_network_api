@@ -76,10 +76,45 @@ module.exports = {
     },
 
     removeFriend (req, res) {
-       
-            
+        User.findOneAndUpdate({ _id: req.params.userId},
+            {$pull: { friends: req.params.friendsId}},
+            {new: true}
+            )
+        // .then((user) => {
+        //     !user ? res.status(404).json({
+        //         message: "No user with this id!"
+        //     })
+        //     : User.findOneAndUpdate(
+        //         { friends: req.params.friendId
+        //         },
+        //         {$pull: { friends: req.params.friendsId}},
+        //         {new: true}
+        //     )
+            .then((user) => {
+                !user
+                ? res.status(404).json({message: "No user was found"})
+                : res.json({
+                    message: 'Remove friend and updated user' })
+                })
+                .catch((err) => {
+                    console.log(err);
+                    res.status(500).json(err)
+                })
+            // })
 
      
 
     }
 }
+
+// User.findOneAndUpdate({
+//     _id: req.params.userId
+// },
+// {$pull: { friends: {userId: req.params.friendsId}}},
+// { runValidators: true, new: true})
+// .then((user) =>
+// !user
+// ? res.status(404).json({message: 'No user with that id!'})
+// : res.json(thought))
+// .catch((err) => res.status(500).json(err))
+// })
